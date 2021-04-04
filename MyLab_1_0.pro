@@ -10,12 +10,14 @@ CONFIG += c++11
 
 SOURCES += \
     AutoEnterprise.cpp \
+    AutoEnterprise.cpp \
     ChockolateEnterprise.cpp \
     Enterprise.cpp \
     UI_mainwindow.cpp \
     main.cpp
 
 HEADERS += \
+    AutoEnterprise.h \
     AutoEnterprise.h \
     ChockolateEnterprise.h \
     Enterprise.h \
