@@ -13,6 +13,7 @@ SOURCES += \
     AutoEnterprise.cpp \
     ChockolateEnterprise.cpp \
     Enterprise.cpp \
+    TEST_CLASS.cpp \
     UI_mainwindow.cpp \
     WeaponEnterprice.cpp \
     main.cpp
@@ -22,6 +23,7 @@ HEADERS += \
     AutoEnterprise.h \
     ChockolateEnterprise.h \
     Enterprise.h \
+    TEST_CLASS.h \
     UI_mainwindow.h \
     WeaponEnterprice.h
 
