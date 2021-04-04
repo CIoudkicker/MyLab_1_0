@@ -10,7 +10,6 @@ CONFIG += c++11
 
 SOURCES += \
     AutoEnterprise.cpp \
-    AutoEnterprise.cpp \
     ChockolateEnterprise.cpp \
     Enterprise.cpp \
     TEST_CLASS.cpp \
