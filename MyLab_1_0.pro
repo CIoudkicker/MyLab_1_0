@@ -14,6 +14,7 @@ SOURCES += \
     ChockolateEnterprise.cpp \
     Enterprise.cpp \
     UI_mainwindow.cpp \
+    WeaponEnterprice.cpp \
     main.cpp
 
 HEADERS += \
@@ -21,7 +22,8 @@ HEADERS += \
     AutoEnterprise.h \
     ChockolateEnterprise.h \
     Enterprise.h \
-    UI_mainwindow.h
+    UI_mainwindow.h \
+    WeaponEnterprice.h
 
 FORMS += \
     UI_mainwindow.ui
