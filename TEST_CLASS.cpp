@@ -24,3 +24,17 @@ void TEST_CLASS::TEST_METHOD(){
     qDebug().noquote() << "Tax is " << this->enterprise->getTax();
 }
 
+void TEST_CLASS::TEST_METHOD(Enterprise *enterprise){
+
+    qDebug().noquote() << "\nTEST IS START WITH ENTERPRISE:" << enterprise->printTypeEnterpise(enterprise->getTypeEnterprise());
+
+    qDebug().noquote() <<"Enterprise Name:"<< enterprise->getName();
+    qDebug().noquote() <<"Enterprise Owners:"<< enterprise->getOwnerList();
+    qDebug().noquote() <<"Enterprise Income:"<< enterprise->getIncome();
+    qDebug().noquote() <<"Enterprise Area:"<< enterprise->getArea();
+    qDebug().noquote() <<"Enterprise Employee Count:"<< enterprise->getEmployeeCount();
+    qDebug().noquote() << "Tax is " << enterprise->getTax();
+}
+
+
+

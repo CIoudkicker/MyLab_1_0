@@ -4,6 +4,7 @@
 #include <iostream>
 #include <QDebug>
 #include "AutoEnterprise.h"
+#include "EnterpriseRegister.h"
 #include "Enterprise.h"
 using namespace std;
 
@@ -14,6 +15,8 @@ class TEST_CLASS{
         TEST_CLASS(Enterprise *enterprise);
         ~TEST_CLASS();
         void TEST_METHOD();
+        void TEST_METHOD(Enterprise *enterprise);
+
 
     private:
 
