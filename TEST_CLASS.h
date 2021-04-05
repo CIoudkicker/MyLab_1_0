@@ -17,6 +17,7 @@ class TEST_CLASS{
         void TEST_METHOD();
         void TEST_METHOD(Enterprise *enterprise);
         void TEST_SAME_OWNER(EnterpriseRegister *registr, QString ownerName);
+        void TEST_AVERAGE(EnterpriseRegister *registr);
 
     private:
 
