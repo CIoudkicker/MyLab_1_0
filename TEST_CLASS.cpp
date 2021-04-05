@@ -36,5 +36,16 @@ void TEST_CLASS::TEST_METHOD(Enterprise *enterprise){
     qDebug().noquote() << "Tax is " << enterprise->getTax();
 }
 
+void TEST_CLASS::TEST_SAME_OWNER(EnterpriseRegister *registr, QString ownerName){
+    qDebug().noquote().nospace()<< "\nTEST_SAME_OWNER for: "<<ownerName;
+    for(int i = 0; i < registr->giveCountOfEnterprise(); i++){
+        for(int j = 0; j < registr->giveEnterprise(i)->getOwnerList().length(); j++){
+            if(registr->giveEnterprise(i)->getOwnerList()[j] == ownerName){
+                qDebug().noquote().nospace()<<" ["<<i<<"] "<<
+                registr->giveEnterprise(i)->printTypeEnterpise(registr->giveEnterprise(i)->getTypeEnterprise());
+            }
+        }
+    }
+}
 
 
