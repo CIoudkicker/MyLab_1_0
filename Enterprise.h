@@ -12,8 +12,8 @@ class Enterprise{
 
         enum TypesOfEnterprise{
             ChockolateEnterprise,
-            AutoEnterprise,
-            WeaponEnterprice
+            WeaponEnterprice,
+            AutoEnterprise
         };
 
         void setName(QString name); // +   // сеттеры для приватных полей абстрактного класса предприятия
@@ -51,3 +51,4 @@ class Enterprise{
 };
 
 #endif // ENTERPRISE_H
+
