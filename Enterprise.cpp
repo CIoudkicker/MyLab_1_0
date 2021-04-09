@@ -16,14 +16,17 @@ void Enterprise::setOwnerList(QList<QString> list){ // установить сп
 
 void Enterprise::setIncome(double income1){ // установить доход предприятия +
     this->income = income1;
+    this->TaxCount();
 }
 
 void Enterprise::setArea(double area1){  // установить площадь предприятия +
     this->area = area1;
+    this->TaxCount();
 }
 
 void Enterprise::setEmployeeCount(int count){ // установить число сотрудников предприятия
     this->employeeCount = count;
+    this->TaxCount();
 }
 
 void Enterprise::setTax(double tax1){
