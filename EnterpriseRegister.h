@@ -13,11 +13,19 @@ class Enterprise;
 class EnterpriseRegister{
 
     private:
+        EnterpriseRegister();
+        ~EnterpriseRegister();
+        EnterpriseRegister(EnterpriseRegister const&);
+        EnterpriseRegister& operator= (EnterpriseRegister const&);
 
         QList<Enterprise*> enterpriseList;
         QList<int*> trainingList;
 
     public:
+        static EnterpriseRegister& Instance(){
+            static EnterpriseRegister s;
+            return s;
+        }
 
         void addEnterprise(Enterprise *enterprise);   // добавление предприятия в список +
         Enterprise* giveEnterprise(int n);   // получение предприятия по индексу из списка +

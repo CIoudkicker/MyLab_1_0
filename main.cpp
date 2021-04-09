@@ -51,47 +51,48 @@ int main(int argc, char *argv[])
     qDebug().noquote() << "";
 
     // создание регистра
-    EnterpriseRegister *Register = new EnterpriseRegister();
+    EnterpriseRegister &Register = EnterpriseRegister::Instance();
+
     // занес в регистр
-    Register->addEnterprise(ChockolateEnterprise_Example);
-    Register->addEnterprise(AutoEnterprise_Example);
+    Register.addEnterprise(ChockolateEnterprise_Example);
+    Register.addEnterprise(AutoEnterprise_Example);
 
 
     qDebug().noquote() << "giveCountOfEnterprise is working: " <<
-    Register->giveCountOfEnterprise();
+    Register.giveCountOfEnterprise();
 
     // создал тест чтобы проверить функции регистра
-    TEST_CLASS *Test_Register = new TEST_CLASS(Register->giveEnterprise(0));
+    TEST_CLASS *Test_Register = new TEST_CLASS(Register.giveEnterprise(0));
 
     //тест возврата предприятия
-    Test_Register->TEST_METHOD(Register->giveEnterprise(0));
-    Test_Register->TEST_METHOD(Register->giveEnterprise(1));
+    Test_Register->TEST_METHOD(Register.giveEnterprise(0));
+    Test_Register->TEST_METHOD(Register.giveEnterprise(1));
 
     //тест удаления предприятия из регистра
-    Register->deleteEnterprise(1);
+    Register.deleteEnterprise(1);
 
-    Register->printEnterpriseList();
-    qDebug().noquote() << "giveCountOfEnterprise is working: " <<Register->giveCountOfEnterprise()<<"\n";
+    Register.printEnterpriseList();
+    qDebug().noquote() << "giveCountOfEnterprise is working: " <<Register.giveCountOfEnterprise()<<"\n";
 
     // снова добавляю удаленное производство
 
     AutoEnterprise *AutoEnterprise_Example1 = new AutoEnterprise("SpaceX", *Owners1, 16990, 55, 73);
-    Register->addEnterprise(AutoEnterprise_Example1);
+    Register.addEnterprise(AutoEnterprise_Example1);
 
-    Register->printEnterpriseList();
+    Register.printEnterpriseList();
 
     // вывожу в консоль предприятия которые имеют общего владельца
-    Test_Register->TEST_SAME_OWNER(Register, "Ilon Musk");
+    Test_Register->TEST_SAME_OWNER(&Register, "Ilon Musk");
 
     // создаю новые предприятия AutoEnterprise просто чтобы добавить их в реестр и проверить работу TEST_AVERAGE
     AutoEnterprise *AutoEnterprise_Example2 = new AutoEnterprise("Tesla", *Owners2, 11550, 12, 23);
     AutoEnterprise *AutoEnterprise_Example3 = new AutoEnterprise("Tesla", *Owners3, 23123, 98, 67);
 
-    Register->addEnterprise(AutoEnterprise_Example2);
-    Register->addEnterprise(AutoEnterprise_Example3);
-    Register->printEnterpriseList();
+    Register.addEnterprise(AutoEnterprise_Example2);
+    Register.addEnterprise(AutoEnterprise_Example3);
+    Register.printEnterpriseList();
 
-    Test_Register->TEST_AVERAGE(Register); // ну собственно TEST_AVERAGE
+    Test_Register->TEST_AVERAGE(&Register); // ну собственно TEST_AVERAGE
 
     delete AutoEnterprise_Example;
     delete AutoEnterprise_Example1;
@@ -104,7 +105,7 @@ int main(int argc, char *argv[])
     delete ChockolateEnterprise_Test;
     delete WeaponEnterprice_Test;
 
-    delete Register;
+
     delete Test_Register;
 
     delete Owners1;

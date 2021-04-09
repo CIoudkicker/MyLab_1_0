@@ -7,6 +7,13 @@
 
 using namespace std;
 
+
+EnterpriseRegister::EnterpriseRegister(){}
+
+EnterpriseRegister::~EnterpriseRegister(){}
+
+
+
 void EnterpriseRegister::addEnterprise(Enterprise *enterprise){ // добавление предприятия +
 
     qDebug().noquote()<< "addEnterprise is working. Adding: "<< enterprise->printTypeEnterpise(enterprise->getTypeEnterprise());
