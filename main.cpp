@@ -36,18 +36,18 @@ int main(int argc, char *argv[])
 
     // создание объектов классов предприятия и дальнейшее создание объектов класса теста
     AutoEnterprise *AutoEnterprise_Example = new AutoEnterprise("SpaceX", *Owners1, 16990, 55, 73);
-    TEST_CLASS *AutoEnterprise_Test = new TEST_CLASS(AutoEnterprise_Example);
-    AutoEnterprise_Test->TEST_METHOD();
+    TEST_CLASS *AutoEnterprise_Test = new TEST_CLASS();
+    AutoEnterprise_Test->TEST_METHOD(AutoEnterprise_Example);
 
 
     Enterprise *ChockolateEnterprise_Example = new ChockolateEnterprise("WillyWonka", *Owners2, 35000, 89, 52);
-    TEST_CLASS *ChockolateEnterprise_Test = new TEST_CLASS(ChockolateEnterprise_Example);
-    ChockolateEnterprise_Test->TEST_METHOD();
+    TEST_CLASS *ChockolateEnterprise_Test = new TEST_CLASS();
+    ChockolateEnterprise_Test->TEST_METHOD(ChockolateEnterprise_Example);
 
 
     WeaponEnterprice *WeaponEnterprice_Example = new WeaponEnterprice("Avengers", *Owners3, 20000, 22, 34);
-    TEST_CLASS *WeaponEnterprice_Test = new TEST_CLASS(WeaponEnterprice_Example);
-    WeaponEnterprice_Test->TEST_METHOD();
+    TEST_CLASS *WeaponEnterprice_Test = new TEST_CLASS();
+    WeaponEnterprice_Test->TEST_METHOD(WeaponEnterprice_Example);
     qDebug().noquote() << "";
 
     // создание регистра
@@ -57,12 +57,11 @@ int main(int argc, char *argv[])
     Register.addEnterprise(ChockolateEnterprise_Example);
     Register.addEnterprise(AutoEnterprise_Example);
 
-
     qDebug().noquote() << "giveCountOfEnterprise is working: " <<
     Register.giveCountOfEnterprise();
 
     // создал тест чтобы проверить функции регистра
-    TEST_CLASS *Test_Register = new TEST_CLASS(Register.giveEnterprise(0));
+    TEST_CLASS *Test_Register = new TEST_CLASS();
 
     //тест возврата предприятия
     Test_Register->TEST_METHOD(Register.giveEnterprise(0));
@@ -92,9 +91,10 @@ int main(int argc, char *argv[])
     Register.addEnterprise(AutoEnterprise_Example3);
     Register.printEnterpriseList();
 
+
     Test_Register->TEST_AVERAGE(&Register); // ну собственно TEST_AVERAGE
 
-    delete AutoEnterprise_Example;
+
     delete AutoEnterprise_Example1;
     delete AutoEnterprise_Example2;
     delete AutoEnterprise_Example3;
@@ -104,7 +104,6 @@ int main(int argc, char *argv[])
     delete AutoEnterprise_Test;
     delete ChockolateEnterprise_Test;
     delete WeaponEnterprice_Test;
-
 
     delete Test_Register;
 
@@ -116,4 +115,5 @@ int main(int argc, char *argv[])
     UI_mainwindow w;
     w.show();
     return a.exec();
+
 }

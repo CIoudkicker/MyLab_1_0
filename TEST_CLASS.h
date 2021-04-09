@@ -12,6 +12,7 @@ class TEST_CLASS{
 
     public:
 
+        TEST_CLASS();
         TEST_CLASS(Enterprise *enterprise);
         ~TEST_CLASS();
         void TEST_METHOD();

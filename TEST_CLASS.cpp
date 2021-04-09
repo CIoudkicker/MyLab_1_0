@@ -2,6 +2,11 @@
 #include "AutoEnterprise.h"
 #include "Enterprise.h"
 
+TEST_CLASS::TEST_CLASS()
+{
+    this->enterprise = nullptr;
+}
+
 
 TEST_CLASS::TEST_CLASS(Enterprise *enterprise)
 {
