@@ -10,8 +10,11 @@ using namespace std;
 
 EnterpriseRegister::EnterpriseRegister(){}
 
-EnterpriseRegister::~EnterpriseRegister(){}
-
+EnterpriseRegister::~EnterpriseRegister(){
+    while(!enterpriseList.isEmpty()){
+        delete enterpriseList.takeLast();
+    }
+}
 
 
 void EnterpriseRegister::addEnterprise(Enterprise *enterprise){ // добавление предприятия +

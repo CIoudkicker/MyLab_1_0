@@ -110,10 +110,12 @@ int main(int argc, char *argv[])
     delete Owners1;
     delete Owners2;
     delete Owners3;
-
+/*
     QApplication a(argc, argv);
     UI_mainwindow w;
     w.show();
     return a.exec();
 
+*/
+    return 0;
 }
